@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>
+        Arreglos
+    </h1>
+    <script>
+        const a = [];
+        const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+        console.log(a);
+        console.log(b);
+        console.log(b.length);//cantidad de elementos del array
+        console.log(b[2]);
+        console.log(b[0]);
+        console.log(b[3]);
+        console.log(b[3][2]);
+        console.log(b[3][3][0]);//posiciones anidadas
+        const c = Array.of("X", "Y", "Z", 9, 8, 7);
+        console.log(c);
+        const d = Array(100).fill("a"); //rellenar con "a"
+        console.log(d);
+        const e = new Array();//creamos un array como objeto
+        console.log(e);
+        const f = new Array(1, 2, 3, true, false);
+        console.log(f);
+        const colores = ["Rojo", "Verde", "Azul"];
+        console.log(colores);
+        colores.push("Negro"); //agregamos 1 elemento al final del array
+        console.log(colores);
+        colores.pop(); //eliminamos el ultimo elemento
+        console.log(colores);
+        colores.forEach(function (el, index) { //callback que retorna elemento y el indice
+            console.log(`<li id="${index}">${el}</li>`);
+        });
+        let arr4 = new Array(4); //se crea un array vacion de 4 elementos
+        //ver el contenido de un array
+        console.log(arr4);
+
+
+        //iteracion
+        let stack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//se define una pila
+        //forma1 utilizaion un ciclo For
+        for (let i = 0; i <= stack.length; i++) {
+            console.log("element form1: " + stack[i]);
+        }
+
+        //forma2 solo retorna los elementos no los indices
+        for (let element of stack) {
+            console.log("element form1: " + element);
+        }
+
+        //forma3 solo retorna los indices
+        for (let index in stack) {
+            console.log("element form3: " + stack[index]);
+        }
+
+        //forma4 callback
+        stack.forEach((item, index, array) => {
+            console.log("element form4: " + array[index]);
+        })
+
+        //borrar un elemento de un array
+        delete stack[3];
+        console.log("array: " + stack);
+
+        //esto puede generar error
+        let auc = [];
+        auc[45] = 56;
+        console.log(auc.length);
+
+        let result = 0;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tipos de Variable</title>
+
+<body>
+    <h1>Var vs Let vs Const</h1>
+    <ul>
+        <li>Instalar Eslint extension de vscode</li>
+        <li>Instalar Prettier extension de vscode</li>
+    </ul>
+    <h1>Variables</h1>
+    <ul>
+        <li>Escritura de codigo</li>
+        <ul>
+            <li>
+                snake_case
+            </li>
+            <li>
+                UPPER_CASE
+            </li>
+            <li>
+                UpperCamelCase
+            </li>
+            <li>
+                lowerCamelCase
+            </li>
+        </ul>
+
+        </li>
+        <li>Datos primitivos</li>
+        <ul>
+            <li>string</li>
+            <li>boolean</li>
+            <li>null</li>
+            <li>undefined</li>
+            <li>NaN</li>
+            <li>number</li>
+        </ul>
+        <li>Variables Compuestas o complejos</li>
+        <ul>
+            <li>object = {} </li>
+            <li>array = []</li>
+            <li>function () { }</li>
+            <li>Class {}</li>
+            <li>etc.</li>
+        </ul>
+    </ul>
+    <p id="suma"></p>
+    <script src="ejemplo1.js">
+
+        var hola = "Hola Mundo";
+        let hello = "Hello World";
+        console.log(hola);
+        console.log(hello);
+        console.log("tipo de variable de window: " + typeof window)
+        console.log(window.hola);
+        console.log(window.hello);
+        //Ambito de bloque
+        //Esto es un bloque - comentario de una lines
+        /*comentario varias
+        líneas */
+
+        var musica = "Rock";
+        console.log("Variable Música antes del Bloque", musica);
+
+        console.log("-----------  var  -------------------");
+        //bloque
+        {
+            var musica = "Pop";
+            console.log("Variable Música dentro del Bloque", musica);
+        }
+
+        console.log("Variable Música después del Bloque", musica);
+
+
+        console.log("--------------- let -----------------");
+
+        let musica2 = "Rock";
+        console.log("Variable Música antes del Bloque", musica2);
+        {
+            let musica2 = "Pop";
+            console.log("Variable Música dentro del Bloque", musica2);
+        }
+        console.log("Variable Música después del Bloque", musica2);
+    </script>
+    <script>
+        console.log("**** Tipos d datos ****");
+        console.log("**** string ****");
+        // ("use strict"); ES5 las variables deben ser declaradas
+        nombre = "vladimir Fernandez"; //tipo string
+        let saludar = new String("Hola Mundo");
+        let apellido = "apellido";//tipo string
+        console.log(
+            nombre.length,
+            apellido.length,
+            saludar.length,
+            nombre.toUpperCase(),
+            apellido.toLowerCase(),
+            nombre.includes("vlad"),
+            nombre,
+            nombre.trim(),
+            nombre.split(" "),
+            nombre.split(",")
+        );
+
+
+        console.log("**** Template Strings ****");
+
+        let nombre2 = "Vlaidmir";
+        let apellido2 = "Fernandez";
+        //  Concatenación
+        let saludar2 = "Hola, soy " + nombre + " " + apellido + ".";
+        console.log(saludar2);
+
+        //Interpolción de variables el valor de una variable se incrusta dentro de una cadena de caracteres
+        //Template String
+        let saludar3 = `Hola soy ${nombre} ${apellido}.`;
+        console.log(saludar3);
+
+        let html1 = "<ul><li>Uno</li><li>Dos</li><li>Tres</li></ul>";
+        console.log(html1);
+        let html2 = `
+        <ul>
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+        </ul>
+        `;
+
+        console.log(html2);
+
+        let html3 = "<ul>";
+        html3 += "<li>Uno</li>";
+        html3 += "<li>Dos</li>";
+        html3 += "<li>Tres</li>";
+        html3 += "</ul>";
+        console.log(html3);
+
+
+
+        console.log("**** boolean ****");
+        let dato = true; //dato bool
+
+        let verdadero = true;
+        let falso = false;
+        let v = Boolean(true);
+        let f = Boolean(false);
+        console.log(verdadero, falso, v, f);
+        console.log(typeof verdadero, typeof falso);
+        console.log(Boolean(0));
+        console.log(Boolean(-7));
+        console.log(Boolean(""));
+        console.log(Boolean(" "));
+
+
+
+        //null es un valor especial que indica la ausencia de un valor o valor nulo
+        let nulo = null;
+        console.log(null);
+
+        //undefined indica que no se ha inicializado una variable y que el valor está ausente
+        let indefinida;
+        console.log(indefinida);
+
+        //NaN - Not a Number
+        let noEsUnNumero = "hola" * 3.7;
+        console.log(noEsUnNumero);
+
+        console.log("**** Variables Compuestas ****");
+        const objeto = {
+            nombre: "Vladimir",
+            edad: 25
+        }
+        const colores = ["blanco", "negro", "azul"];
+        console.log(objeto);
+        console.log(colores);
+        objeto.correo = "vladfernd@gmail.com";
+        colores.push("morado");
+        console.log(objeto);
+        console.log(colores);
+
+        console.log("**** Variable Number ****");
+        let a = 2;
+        let b = new Number(1);
+        let c = 0.12345678;
+        let d = "1.5";
+        console.log(a, b);
+        console.log(c.toFixed(1));
+        console.log(c.toFixed(5));
+        console.log(parseInt(c));
+        console.log(parseFloat(c));
+        console.log(typeof c, typeof d);
+        console.log(a + b);
+        console.log(c + parseInt(d));
+        console.log(c + parseFloat(d));
+        console.log(c + Number.parseInt(d));
+        console.log(c + Number.parseFloat(d)); 
+    </script>
+</body>
+
+</html>
