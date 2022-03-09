@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Desestructuracion</h1>
+    <script>
+        const numeros = [1, 2, 3];
+        //Sin destructuración
+        let uno = numeros[0],
+            dos = numeros[1],
+            tres = numeros[2];
+        console.log(uno, dos, tres);
+        //Con destructuración
+        const [one, two, three] = numeros;
+        console.log(one, two, three);
+        const persona = {
+            nombre: "Jon",
+            apellido: "MirCha",
+            edad: 35
+        };
+        let { nombre, edad, apellido } = persona;
+        console.log(nombre, apellido, edad);
+
+        console.log("**** objetos literales ****");
+        let nombre = "Bobby",
+            edad = 2;
+        const perro = {
+            nombre: nombre,
+            edad: edad,
+            ladrar: function () {
+                console.log("guauu guauu!!!")
+            }
+        }
+        console.log(perro);
+        perro.ladrar()
+        const dog = {
+            nombre,
+            edad,
+            raza: "Mestizo",
+            ladrar() {
+                console.log("guauu guauu guauu!!!")
+            }
+        }
+        console.log(dog);
+        dog.ladrar();
+
+
+    </script>
+</body>
+
+</html>
