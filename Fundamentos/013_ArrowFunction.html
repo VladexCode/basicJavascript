@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+    <script>
+        /*ejecutar una sola linea de codigo*/
+        const saludar = () => console.log(`Hola`);
+        saludar();
+
+        /* Con un parametro*/
+        const saludar2 = nombre => console.log(`Hola ${nombre}`);
+        saludar2("Vladimir");
+
+        /*con dos parametros*/
+        const sumar = function (a, b) {
+            return a + b;
+        }
+
+        const sumar2 = (a, b) => a + b;
+        console.log(sumar2(9, 9));
+
+
+        const funcionDeVariasLineas = () => {
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+        funcionDeVariasLineas();
+
+        /*forEach -> callback*/
+        const numeros = [1, 2, 3, 4, 5];
+        numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
+
+
+        /*=> this hacee referencia a window*/
+        function Perro1() {
+            console.log(this);
+        }
+        Perro1();
+
+        const perro = {
+            nombre: "Jerry",
+           // ladrar: ()=>this,
+            ladrar() {
+                console.log(this)
+            }
+        }
+        perro.ladrar(); 
+    </script>
+</body>
+
+</html>
